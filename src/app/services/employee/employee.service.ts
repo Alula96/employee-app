@@ -15,6 +15,8 @@ export class EmployeeService {
 
   readonly BASE_URL = environment.BASE_URL;
 
+  actualEmployee: EmployeeModel;
+
   constructor(private http: HttpClient) { }
 
   getEmployeesList(): Observable<any> {
@@ -47,7 +49,6 @@ export class EmployeeService {
         id
       }
     };
-
     return this.http.delete(URLRequest, options);
   }
 }

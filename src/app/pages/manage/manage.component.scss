@@ -1,0 +1,31 @@
+@import 'settings/settings.scss';
+@import 'tools/tools.scss';
+
+.p-manage {
+  &__header {
+    padding-bottom: calculate-size(20);
+
+    h1 {
+      font-size: calculate-size(26);
+    }
+  }
+
+  .form {
+    &__field {
+      width: 100%;
+    }
+
+    &__actions {
+      display: flex;
+      justify-content: center;
+      margin-bottom: calculate-size(10);
+      button {
+        font-weight: bold;
+        &:first-child {
+          margin-right: 2%;
+        }
+        min-width: 30%;
+      }
+    }
+  }
+}

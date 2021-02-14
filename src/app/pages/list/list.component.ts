@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { EmployeeModel } from '@app/models/employee.model';
 import { EmployeeService } from '@app/services/employee/employee.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -12,7 +13,9 @@ export class ListComponent implements OnInit {
 
   employeesList: EmployeeModel[];
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(
+    private employeeService: EmployeeService,
+    private router: Router) { }
 
   ngOnInit() {
     this.loadData();
@@ -26,8 +29,14 @@ export class ListComponent implements OnInit {
   }
 
   onButtonClicked(event: string, employeeSelected: EmployeeModel) {
+    console.log({event});
+    if (event === 'create') {
+      this.employeeService.actualEmployee = null;
+      this.router.navigate(['/dashboard/employee']);
+    }
     if (event === 'edit') {
-
+      this.employeeService.actualEmployee = employeeSelected;
+      this.router.navigate(['/dashboard/employee']);
     }
     if (event === 'remove') {
       this.employeeService.removeEmployee(employeeSelected.id).subscribe(() => {

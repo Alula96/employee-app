@@ -12,6 +12,10 @@ export const routesDashboard: Routes = [
         path: 'list',
         loadChildren: () => import('@app/pages/list/list.module').then(m => m.ListModule),
       },
+      {
+        path: 'employee',
+        loadChildren: () => import('@app/pages/manage/manage.module').then(m => m.ManageModule),
+      },
       { path: '', redirectTo: 'list', pathMatch: 'full' },
       { path: '**', redirectTo: 'list', pathMatch: 'full' },
     ]
