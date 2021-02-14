@@ -1,3 +1,5 @@
+import { MatButtonModule, MatIconModule, MatToolbarModule } from '@angular/material';
+
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -7,7 +9,11 @@ import { NgModule } from '@angular/core';
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    // Angular material
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class DashboardModule { }

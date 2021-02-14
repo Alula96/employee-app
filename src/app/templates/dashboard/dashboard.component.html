@@ -1,2 +1,28 @@
-holi
-<router-outlet></router-outlet>
+<main class="t-dashboard">
+  <mat-toolbar
+    class="t-dashboard__toolbar toolbar mat-elevation-z2"
+    color="primary"
+  >
+    <div class="toolbar__first-group">
+      <img
+        class="toolbar__logo"
+        src="assets/icons/logo-white.svg"
+        alt="Application logo in white color"
+      />
+      <span class="toolbar__title">EmPloyee</span>
+    </div>
+    <div class="toolbar__second-group">
+      <button
+        mat-icon-button
+        class="favorite-icon"
+        aria-label="Love this application"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <section class="t-dashboard__section">
+    <router-outlet></router-outlet>
+  </section>
+</main>
