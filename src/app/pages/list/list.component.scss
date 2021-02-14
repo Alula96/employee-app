@@ -19,36 +19,6 @@
   }
 
   &__elements {
-    .card {
-      &__content {
-        display: flex;
-        flex-wrap: wrap;
-
-        &-value {
-          font-size: calculate-size(18);
-          font-weight: bold;
-        }
-
-        &-key {
-          font-size: calculate-size(16);
-        }
-
-        div {
-          padding-right: calculate-size(8);
-        }
-      }
-      &__actions {
-        display: flex;
-        justify-content: center;
-        margin-bottom: calculate-size(8);
-        button {
-          font-weight: bold;
-          &:first-child {
-            margin-right: 2%;
-          }
-          min-width: 30%;
-        }
-      }
-    }
+    
   }
 }

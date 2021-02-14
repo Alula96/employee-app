@@ -1,0 +1,33 @@
+<mat-card class="employee-card">
+  <mat-card-header>
+    <mat-card-title>#{{ employee.id }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="employee-card__content">
+    <div>
+      <span class="employee-card__content-value">{{ employee.name | uppercase }}</span><br>
+      <span class="employee-card__content-key">{{ 'Nombre' | uppercase }}</span>
+    </div>
+    <div>
+      <span class="employee-card__content-value">{{ employee.lastName | uppercase }}</span><br>
+      <span class="employee-card__content-key">{{ 'Apellido' | uppercase }}</span>
+    </div>
+    <div>
+      <span class="employee-card__content-value">{{ employee.birthdate | uppercase }}</span><br>
+      <span class="employee-card__content-key">{{ 'Fecha de nacimiento' | uppercase }}</span>
+    </div>
+    <div>
+      <span class="employee-card__content-value">{{ employee.pay | uppercase }}</span><br>
+      <span class="employee-card__content-key">{{ 'Pago' | uppercase }}</span>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="employee-card__actions">
+    <button 
+      mat-flat-button 
+      color="accent"
+      (click)="buttonClicked.emit('edit')">Editar</button>
+    <button 
+      mat-flat-button 
+      color="warn"
+      (click)="buttonClicked.emit('remove')">Eliminar</button>
+  </mat-card-actions>
+</mat-card>
