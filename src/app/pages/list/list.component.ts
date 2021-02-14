@@ -25,13 +25,16 @@ export class ListComponent implements OnInit {
         (error) => console.dir(error));
   }
 
-  onButtonClicked(event: string, employee: EmployeeModel) {
+  onButtonClicked(event: string, employeeSelected: EmployeeModel) {
     if (event === 'edit') {
 
     }
-    
     if (event === 'remove') {
-
+      this.employeeService.removeEmployee(employeeSelected.id).subscribe(() => {
+        this.employeesList =
+          this.employeesList
+            .filter((employee: EmployeeModel) => employee !== employeeSelected);
+      });
     }
   }
 }

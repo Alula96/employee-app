@@ -1,10 +1,10 @@
 import * as moment from 'moment';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 import { EmployeeModel } from '@app/models/employee.model';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 
@@ -35,5 +35,19 @@ export class EmployeeService {
           return throwError(error);
         })
       );
+  }
+
+  removeEmployee(id: number): Observable<any> {
+    const URLRequest = `${this.BASE_URL}/employee`;
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      body: {
+        id
+      }
+    };
+
+    return this.http.delete(URLRequest, options);
   }
 }
