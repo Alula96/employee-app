@@ -2,6 +2,7 @@
 @import 'tools/tools.scss';
 
 .employee-card {
+  margin-bottom: calculate-size(10);
   &__content {
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +24,7 @@
   &__actions {
     display: flex;
     justify-content: center;
-    margin-bottom: calculate-size(8);
+    margin-bottom: calculate-size(10);
     button {
       font-weight: bold;
       &:first-child {

@@ -5,19 +5,19 @@
   <mat-card-content class="employee-card__content">
     <div>
       <span class="employee-card__content-value">{{ employee.name | uppercase }}</span><br>
-      <span class="employee-card__content-key">{{ 'Nombre' | uppercase }}</span>
+      <span class="employee-card__content-key">NOMBRE</span>
     </div>
     <div>
       <span class="employee-card__content-value">{{ employee.lastName | uppercase }}</span><br>
-      <span class="employee-card__content-key">{{ 'Apellido' | uppercase }}</span>
+      <span class="employee-card__content-key">APELLIDO</span>
     </div>
     <div>
-      <span class="employee-card__content-value">{{ employee.birthdate | uppercase }}</span><br>
-      <span class="employee-card__content-key">{{ 'Fecha de nacimiento' | uppercase }}</span>
+      <span class="employee-card__content-value">{{ employee.birthdate.format('YYYY-MM-DD') }}</span><br>
+      <span class="employee-card__content-key">FECHA DE <br> NACIMIENTO</span>
     </div>
     <div>
-      <span class="employee-card__content-value">{{ employee.pay | uppercase }}</span><br>
-      <span class="employee-card__content-key">{{ 'Pago' | uppercase }}</span>
+      <span class="employee-card__content-value">{{ employee.pay | currency }}</span><br>
+      <span class="employee-card__content-key">PAGO</span>
     </div>
   </mat-card-content>
   <mat-card-actions class="employee-card__actions">
