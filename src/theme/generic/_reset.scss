@@ -15,7 +15,7 @@ img {
 html, body {
     height: 100%;
     font-size: (($font-base * 100) / 1920) * 1vw;
-    @include bp('xxx-grande') {
+    @include use-breakpoint('xxx-grande') {
         $font-base: 16;
         font-size: #{$font-base}px;
     }

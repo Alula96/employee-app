@@ -1,6 +1,6 @@
 /* Mixin to create media queries based on a breakpoint */
 
-@mixin breakpoint($breakpoint, $limit: max) {
+@mixin use-breakpoint($breakpoint, $limit: max) {
     @if map-has-key($breakpoints, $breakpoint) {
         $breakpoint: map_get($breakpoints, $breakpoint);
         @if $limit == min {

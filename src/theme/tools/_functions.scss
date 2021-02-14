@@ -1,6 +1,6 @@
 
 /* Function to handle the font size in px and convert into rem */
-@function get-font-size($px, $base: $font-base) {
+@function calculate-size($px, $base: $font-base) {
     @return ($px / $base) * 1rem;
 }
 
