@@ -1,0 +1,7 @@
+@include font-face(font("primary", "regular"), 'assets/fonts/open-sans/');
+@include font-face(font("primary", "semibold"), 'assets/fonts/open-sans/');
+@include font-face(font("primary", "bold"), 'assets/fonts/open-sans/');
+@include font-face(font("secondary", "regular"), 'assets/fonts/nunito/');
+@include font-face(font("secondary", "bold"), 'assets/fonts/nunito/');
+
+@include font-face(font("icons"), 'assets/fonts/icons/');

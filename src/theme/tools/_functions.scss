@@ -1,0 +1,37 @@
+
+/* Function to handle the font size in px and convert into rem */
+@function get-font-size($px, $base: $font-base) {
+    @return ($px / $base) * 1rem;
+}
+
+/* Function to iterate into the object keys levels and return the value */
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+/* Function to get a font from the fonts object */
+@function font($font-name...) {
+    @if not map-deep-get($fonts, $font-name...) {
+        @warn "No font found for `#{$font-name}` in $fonts map. Property omitted.";
+    }
+    @return map-deep-get($fonts, $font-name...);
+}
+
+/* Function to get a color from the color object */
+@function color($color-name...) {
+    @if not map-deep-get($colors, $color-name...) {
+        @warn "No color found for `#{$color-name}` in $colors map. Property omitted.";
+    }
+    @return map-deep-get($colors, $color-name...);
+}
+
+/* Function to handle the z-index and get a value from z-index object */
+@function z($layer) {
+    @if not map-has-key($z-layers, $layer) {
+        @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+    }
+    @return map-get($z-layers, $layer);
+}
