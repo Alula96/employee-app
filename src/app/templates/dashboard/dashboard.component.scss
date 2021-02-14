@@ -25,10 +25,15 @@
     }
   }
 
-  &__section {
+  &__main {
     margin: 0 auto;
-    margin-top: 2%;
-    max-width: 60%;
+    margin-top: calculate-size(50);
+    width: 60%;
+    max-width: 1000px;
     height: 80%;
+
+    @include use-breakpoint('x-grande') {
+      width: 80%;
+    }
   }
 }
