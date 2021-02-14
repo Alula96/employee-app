@@ -9,6 +9,7 @@ import {
   MatRippleModule
 } from '@angular/material';
 
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { NgModule } from '@angular/core';
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatMomentDateModule,
     MatRippleModule
   ]
 })

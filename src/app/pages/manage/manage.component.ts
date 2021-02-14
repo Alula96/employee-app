@@ -33,6 +33,7 @@ export class ManageComponent implements OnInit {
     if (this.actualEmployee && this.actualEmployee.id) {
       this.title = 'Editar';
       this.form.addControl('id', new FormControl(this.actualEmployee.id, Validators.required));
+      this.form.get('id').disable();
       this.form.get('name').setValue(this.actualEmployee.name);
       this.form.get('lastName').setValue(this.actualEmployee.lastName);
       this.form.get('birthdate').setValue(this.actualEmployee.birthdate);
@@ -49,19 +50,27 @@ export class ManageComponent implements OnInit {
     }
   }
 
-  onCancel() {
+  returnToListPage() {
     this.router.navigate(['/dashboard/list']);
   }
 
   onSubmit(action) {
-    switch (action) {
-      case 'create':
-        
-        break;
-      case 'edit':
-
-        this.employeeService.actualEmployee = null;
-        break;
+    if (this.form.valid) {
+      switch (action) {
+        case 'create':
+          this.employeeService.createEmployee(this.form.value)
+            .subscribe(() => {
+              this.returnToListPage();
+            }, (error) => { console.dir({error}); });
+          break;
+        case 'edit':
+          this.employeeService.editEmployee({ ...this.form.value, id: this.actualEmployee.id })
+            .subscribe(() => {
+              this.employeeService.actualEmployee = null;
+              this.returnToListPage();
+            }, (error) => { console.dir({error}); });
+          break;
+      }
     }
   }
 }

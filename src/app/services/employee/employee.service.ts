@@ -51,4 +51,14 @@ export class EmployeeService {
     };
     return this.http.delete(URLRequest, options);
   }
+
+  createEmployee(employee: EmployeeModel): Observable<any> {
+    const URLRequest = `${this.BASE_URL}/employee`;
+    return this.http.post(URLRequest, employee);
+  }
+
+  editEmployee(employee: EmployeeModel): Observable<any> {
+    const URLRequest = `${this.BASE_URL}/employee`;
+    return this.http.put(URLRequest, employee);
+  }
 }

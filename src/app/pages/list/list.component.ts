@@ -29,7 +29,6 @@ export class ListComponent implements OnInit {
   }
 
   onButtonClicked(event: string, employeeSelected: EmployeeModel) {
-    console.log({event});
     if (event === 'create') {
       this.employeeService.actualEmployee = null;
       this.router.navigate(['/dashboard/employee']);

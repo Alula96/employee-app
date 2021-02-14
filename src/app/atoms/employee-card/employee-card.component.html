@@ -16,7 +16,7 @@
       <span class="employee-card__content-key">FECHA DE <br> NACIMIENTO</span>
     </div>
     <div>
-      <span class="employee-card__content-value">{{ employee.pay | currency }}</span><br>
+      <span class="employee-card__content-value">{{ employee.pay | currency:'COP':'symbol':'0.0-2':'es-CO' }}</span><br>
       <span class="employee-card__content-key">PAGO</span>
     </div>
   </mat-card-content>

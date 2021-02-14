@@ -1,7 +1,7 @@
 import * as moment from 'moment';
 
 export interface EmployeeModel {
-  id: number;
+  id?: number;
   name: string;
   lastName: string;
   birthdate: moment.Moment;
